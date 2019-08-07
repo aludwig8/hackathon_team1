@@ -1,18 +1,15 @@
 <?php
-require '../../vendor/autoload.php';
+session_start();
+require __DIR__ .'/../../vendor/autoload.php';
 
-// Create and configure Slim app
-$config = ['settings' => [
+$appConfig = ['settings' => [
     'addContentLengthHeader' => false,
     'displayErrorDetails' => true,
 ]];
 
-$app = new \Slim\App($config);
+$app = new \Slim\App($appConfig);
 
-// Define app routes
-$app->get('/hello/{name}', function ($request, $response, $args) {
-    return $response->write("Hällo " . $args['name']);
-});
+require __DIR__ . "/../config/config.php";
+require __DIR__ . "/../app/routes.php";
 
-// Run app
 $app->run();
