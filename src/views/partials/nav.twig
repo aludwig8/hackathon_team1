@@ -5,7 +5,17 @@
             <ul class="pure-menu-list">
                 <li class="pure-menu-item"><a href="{{ path_for('home') }}" class="pure-menu-link">Home</a></li>
                 <li class="pure-menu-item"><a href="{{ path_for('about') }}" class="pure-menu-link">About us</a></li>
-                <!--<li class="pure-menu-item"><a href="{{ path_for('contact') }}" class="pure-menu-link">Login</a></li> -->
+                <li class="pure-menu-item"><a href="{{ path_for('cart') }}" class="pure-menu-link">Cart</a></li>
+
+                {% if currentUser is not defined %}
+                    <li class="pure-menu-item"><a href="{{ path_for('register') }}" class="pure-menu-link">Register</a></li>
+                {% endif %}
+
+                {% if currentUser is defined %}
+                    <li class="pure-menu-item"><a href="{{ path_for('logout') }}" class="pure-menu-link">Logout</a></li>
+                {% endif %}
+
+
             </ul>
         </div>
     </div>
