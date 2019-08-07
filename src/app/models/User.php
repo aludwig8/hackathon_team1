@@ -12,4 +12,4 @@
  * @property String $zip;
  * @property String $country;
  */
-class Costumer extends Model {}
+class User extends Model {}
