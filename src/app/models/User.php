@@ -28,8 +28,7 @@ class User extends \Model {
              'street' => $this->street,
              'city' => $this->city,
              'zip' => $this->zip,
-             'country' => $this->country,
-             'last_log_in' => $this->last_log_in
+             'country' => $this->country
         ];
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Generation Time: Aug 08, 2019 at 12:00 PM
+-- Generation Time: Aug 08, 2019 at 12:19 PM
 -- Server version: 10.4.7-MariaDB-1:10.4.7+maria~bionic
 -- PHP Version: 7.2.19
 
@@ -76,7 +76,7 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`category_id`, `name`) VALUES
 (1, 'Laptops'),
-(2, 'Desktops'),
+(2, 'Displays'),
 (3, 'Printers');
 
 -- --------------------------------------------------------
@@ -147,8 +147,8 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`product_id`, `category_id`, `name`, `short_description`, `description`, `price`, `stockqty`) VALUES
 (1, 1, 'Laptop 1', 'A short description about laptop #1', 'A longer description about laptop #1', '1234.99', 50),
 (2, 1, 'Laptop 2', 'A short description about laptop #2', 'A longer description about laptop #2', '999.79', 25),
-(3, 2, 'Desktop 2', 'A short description about desktop #2', 'A longer description about desktop #2', '879.99', 35),
-(4, 2, 'Desktop 1', 'A short description about desktop #1', 'A longer description about desktop #1', '1879.99', 15),
+(3, 2, 'Display 2', 'A short description about display #2', 'A longer description about display #2', '879.99', 35),
+(4, 2, 'Display 1', 'A short description about display #1', 'A longer description about display #1', '1879.99', 15),
 (5, 3, 'Printer 1', 'A short description about printer #1', 'A longer description about printer #1', '179.99', 2),
 (6, 3, 'Printer 2', 'A short description about printer #2', 'A longer description about printer #2', '279.99', 7);
 

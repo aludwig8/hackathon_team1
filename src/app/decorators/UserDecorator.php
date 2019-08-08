@@ -31,10 +31,10 @@ class UserDecorator
         return $this->entity->$name($arguments);
     }
 
-    public function getLastOnline()
+    public function getLastLogin()
     {
         if ($this->entity->lastLogIn) {
-            return date('D, d.m.Y', $this->entity->lastOnline);
+            return date('D, d.m.Y', $this->entity->last_log_in);
         } else {
             return "";
         }

@@ -25,4 +25,10 @@ class UserService
         $user = $this->userRepository->getUserById($id);
         return $user;
     }
+
+    public function logout()
+    {
+        $_SESSION = array();
+        session_destroy();
+    }
 }
