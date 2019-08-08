@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Generation Time: Aug 08, 2019 at 11:09 AM
+-- Generation Time: Aug 08, 2019 at 12:00 PM
 -- Server version: 10.4.7-MariaDB-1:10.4.7+maria~bionic
 -- PHP Version: 7.2.19
 
@@ -200,7 +200,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `login`, `firstname`, `lastname`, `email`, `password`, `street`, `zip`, `city`, `country`, `last_log_in`) VALUES
-(1, '', 'First', 'User', 'first@mail.de', '*DB006D8D64953C5663EA467BB08DF59C16B33FCE', 'the street', '98765', 'city', 'Germany', 0);
+(1, 'first@mail.de', 'First', 'User', 'first@mail.de', '*DB006D8D64953C5663EA467BB08DF59C16B33FCE', 'the street', '98765', 'city', 'Germany', 0);
 
 --
 -- Indexes for dumped tables
