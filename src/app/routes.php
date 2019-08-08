@@ -8,5 +8,6 @@ $app->get('/hello/{name}', function ($request, $response, $args) {
 $app->get('/', \HomeController::class . ':home')->setName('home');
 $app->get('/about', \AboutController::class . ':about')->setName('about');
 $app->get('/cart', \CartController::class . ':show')->setName('cart');
-$app->get('/register', \UserController::class . ':register')->setName('register');
-
+$app->get('/home', \UserController::class . ':home')->setName('home');
+$app->get('/login',\LoginController::class . ':login')->setName('login');
+$app->get('/register', \RegisterController::class . ':register')->setName('register');

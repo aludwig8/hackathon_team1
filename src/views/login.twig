@@ -1,25 +1,21 @@
-<form method="post" action="login.php">
+<form class="pure-form pure-form-stacked" method="post" action="login.php">
+    <fieldset>
+        <legend>WebShop Login</legend>
 
-    <div class="input-group">
-        <label class="FieldInfo">Username:</label>
-        <input type="text" name="username" >
-    </div>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Email">
 
-    <div class="input-group">
-        <label class="FieldInfo">Email Address:</label>
-        <input type="email" name="emailaddress">
-    </div>
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Password">
 
-    <div class="input-group">
-        <label class="FieldInfo">Password:</label>
-        <input type="password" name="password">
-    </div>
+        <label for="remember" class="pure-checkbox">
+            <input id="remember" type="checkbox"> Remember me
+        </label>
 
-    <div class="input-group">
-        <button type="submit" class="btn" name="login">Login</button>
-    </div>
-    <p>
-        <a href="{{ path_for('register')}}">  Sign up here</a>
-    </p>
-    <br>
+        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+
+        <p>
+            <a href="{{ path_for('register')}}">  Sign up here</a>
+        </p>
+    </fieldset>
 </form>

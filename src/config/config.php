@@ -3,6 +3,8 @@ use \App\app\controllers\AboutController;
 use \App\app\controllers\CartController;
 use \App\app\controllers\HomeController;
 use \App\app\controllers\UserController;
+use \App\app\controllers\LoginController;
+use \App\app\controllers\RegisterController;
 
 $container = $app->getContainer();
 $container['view'] = function ($container) {
@@ -27,4 +29,10 @@ $container['HomeController'] = function($c) {
 };
 $container['UserController'] = function($c) {
     return new UserController($c);
+};
+$container['LoginController'] = function($c) {
+    return new LoginController($c);
+};
+$container['RegisterController'] = function($c) {
+    return new RegisterController($c);
 };
