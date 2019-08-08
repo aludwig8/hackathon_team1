@@ -12,4 +12,5 @@ $app->get('/cart', \CartController::class . ':show')->setName('cart');
 $app->get('/addToCart/{id}', \CartController::class . ':addToCart')->setName('addToCart');
 $app->get('/home', \UserController::class . ':home')->setName('home');
 $app->get('/login',\LoginController::class . ':login')->setName('login');
+$app->post('/login',\LoginController::class . ':checkLogin')->setName('login');
 $app->get('/register', \RegisterController::class . ':register')->setName('register');

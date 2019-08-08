@@ -26,6 +26,18 @@ class UserService
         return $user;
     }
 
+    public function checkUserCredentials($username, $password)
+    {
+        $found = False;
+        $user = $this->userRepository->getUserByUsernamePassword($username, $password);
+        if ($user) {
+            $found = True;
+            $_SESSION['user'] = ['user_id' => $user->get('user_id'), 'password' => $user->get('password')];
+        }
+
+        return $found;
+    }
+
     public function logout()
     {
         $_SESSION = array();

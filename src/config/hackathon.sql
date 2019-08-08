@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Generation Time: Aug 08, 2019 at 12:19 PM
+-- Generation Time: Aug 08, 2019 at 02:46 PM
 -- Server version: 10.4.7-MariaDB-1:10.4.7+maria~bionic
 -- PHP Version: 7.2.19
 
@@ -186,8 +186,8 @@ CREATE TABLE `user` (
   `login` varchar(255) NOT NULL,
   `firstname` varchar(100) CHARACTER SET utf8 NOT NULL,
   `lastname` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8 NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8 NOT NULL,
   `street` varchar(255) CHARACTER SET utf8 NOT NULL,
   `zip` varchar(50) CHARACTER SET utf8 NOT NULL,
   `city` varchar(100) CHARACTER SET utf8 NOT NULL,
@@ -199,8 +199,8 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `login`, `firstname`, `lastname`, `email`, `password`, `street`, `zip`, `city`, `country`, `last_log_in`) VALUES
-(1, 'first@mail.de', 'First', 'User', 'first@mail.de', '*DB006D8D64953C5663EA467BB08DF59C16B33FCE', 'the street', '98765', 'city', 'Germany', 0);
+INSERT INTO `user` (`user_id`, `login`, `firstname`, `lastname`, `password`, `email`, `street`, `zip`, `city`, `country`, `last_log_in`) VALUES
+(1, 'first@mail.de', 'First', 'User', '098f6bcd4621d373cade4e832627b4f6', 'first@mail.de', 'the street', '98765', 'city', 'Germany', 0);
 
 --
 -- Indexes for dumped tables

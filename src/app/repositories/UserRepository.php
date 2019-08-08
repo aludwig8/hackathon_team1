@@ -18,4 +18,10 @@ class UserRepository
         $user = Model::factory('App\app\models\User')->find_one($id);
         return $user;
     }
+
+    public function getUserByUsernamePassword($username, $password)
+    {
+        $user = Model::factory('App\app\models\User')->where('login', $username)->where('password', $password)->find_one();
+        return $user;
+    }
 }
