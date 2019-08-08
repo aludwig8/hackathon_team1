@@ -15,6 +15,6 @@ class Product extends \Model {
         return $this->has_many('Image');
     }
     function categories() {
-        return $this->$this->has_many('Category');
+        return $this->has_one('Category');
     }
 }

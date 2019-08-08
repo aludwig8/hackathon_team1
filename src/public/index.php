@@ -20,5 +20,6 @@ ORM::configure('username', 'hackathon');
 ORM::configure('password', 'hackathon');
 
 $user = Model::factory('App\app\models\User')->find_one(1);
+$category = Model::factory('App\app\models\Category')->find_one(1);
 
 $app->run();
