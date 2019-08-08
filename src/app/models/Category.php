@@ -1,8 +1,10 @@
 <?php
-
+namespace App\app\models;
 /**
- * @property int $categoryId
- * @property int $productId
- * @property String $categoryName
+ * @property int $category_id
+ * @property string $name
  */
-class Category extends Model{}
+class Category extends \Model {
+    public static $_table = 'category';
+    public static $_id_column = 'category_id';
+}

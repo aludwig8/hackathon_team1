@@ -1,6 +1,5 @@
 <?php
 namespace App\app\models;
-
 /**
  * @property int $user_id;
  * @property string $login;

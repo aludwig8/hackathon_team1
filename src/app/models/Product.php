@@ -1,13 +1,20 @@
 <?php
-
-
+namespace App\app\models;
 /**
- * @property int $productId
- * @property String $productName
- * @property String $productDescription
- * @property float $productPrice
- * @property int $productStockSize
- * @property String $productThumbnailPic
- * @property array $productPictures
+ * @property int $product_id
+ * @property String $name
+ * @property String $description
+ * @property float $price
+ * @property int $stockqty
  */
-class Product extends Model {}
+class Product extends \Model {
+    public static $_table = 'product';
+    public static $_id_column = 'product_id';
+
+    function images() {
+        return $this->has_many('Image');
+    }
+    function categories() {
+        return $this->$this->has_many('Category');
+    }
+}
