@@ -21,4 +21,19 @@ class HomeController extends BaseController
         $response = $this->view->render($response, 'home.twig', ['user' => $user]);
         return $response;
     }
+
+    public function category($request, $response, $args) {
+//var_dump($args);
+        $products = array();
+
+        // if name is set => get products from corresponding category, otherwise just redirect to /
+        if (isset($args['name'])) {
+
+        } else {
+            return $response->withRedirect('/');
+        }
+
+        $response = $this->view->render($response, 'home.twig', ['products' => $products]);
+        return $response;
+    }
 }

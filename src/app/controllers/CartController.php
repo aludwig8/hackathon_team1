@@ -11,8 +11,16 @@ class CartController extends BaseController
     }
 
     public function show($request, $response, $args) {
-        var_dump($this->userService->getTest());
         $response = $this->view->render($response, 'home.twig', ['data' => 'testdata']);
         return $response;
+    }
+
+    public function addToCart($request, $response, $args) {
+        // get product from db
+        $product = $this->productService->getProduct($request->id);
+//var_dump($product);
+        // add to cart
+        // redirect to home page
+        return $response->withRedirect('/');
     }
 }
