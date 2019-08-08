@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Generation Time: Aug 08, 2019 at 07:03 AM
+-- Generation Time: Aug 08, 2019 at 08:06 AM
 -- Server version: 10.4.7-MariaDB-1:10.4.7+maria~bionic
 -- PHP Version: 7.2.19
 
@@ -100,6 +100,7 @@ CREATE TABLE `order` (
 CREATE TABLE `product` (
   `product_id` int(11) NOT NULL,
   `name` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `short_description` varchar(255) NOT NULL,
   `description` text CHARACTER SET utf8 NOT NULL,
   `price` decimal(10,0) NOT NULL,
   `stockqty` int(11) NOT NULL
