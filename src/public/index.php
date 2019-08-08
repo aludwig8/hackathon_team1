@@ -1,18 +1,25 @@
 <?php
-require '../../vendor/autoload.php';
+use App\app\models\User;
 
-// Create and configure Slim app
-$config = ['settings' => [
+session_start();
+require __DIR__ .'/../../vendor/autoload.php';
+
+$appConfig = ['settings' => [
     'addContentLengthHeader' => false,
     'displayErrorDetails' => true,
 ]];
 
-$app = new \Slim\App($config);
+$app = new \Slim\App($appConfig);
 
-// Define app routes
-$app->get('/hello/{name}', function ($request, $response, $args) {
-    return $response->write("Hällo " . $args['name']);
-});
+require __DIR__ . "/../config/config.php";
+require __DIR__ . "/../app/routes.php";
 
-// Run app
+require __DIR__ .'/../../vendor/j4mie/idiorm/idiorm.php';
+ORM::configure('mysql:host=mariadb;dbname=hackathon');
+ORM::configure('username', 'hackathon');
+ORM::configure('password', 'hackathon');
+
+$user = Model::factory('App\app\models\User')->find_one(1);
+//$category = Model::factory('App\app\models\Category')->find_one(1);
+
 $app->run();

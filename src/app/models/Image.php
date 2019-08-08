@@ -1,8 +1,11 @@
 <?php
-
+namespace App\app\models;
 /**
- * @property int $imageId
- * @property String $imagePath
- * @property boolean $previewStatus
+ * @property int $image_id
+ * @property string $path
+ * @property int $preview
  */
-class Image extends Model {}
+class Image extends \Model {
+    public static $_table = 'image';
+    public static $_id_column = 'image_id';
+}
