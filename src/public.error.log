@@ -1,0 +1,1 @@
+2019/08/08 08:35:51 [error] 6#6: *111 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.8:9000", host: "localhost:8082"
