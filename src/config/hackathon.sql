@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Generation Time: Aug 08, 2019 at 09:28 AM
+-- Generation Time: Aug 08, 2019 at 09:37 AM
 -- Server version: 10.4.7-MariaDB-1:10.4.7+maria~bionic
 -- PHP Version: 7.2.19
 
@@ -64,19 +64,9 @@ CREATE TABLE `category` (
 
 CREATE TABLE `image` (
   `image_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
   `path` varchar(255) NOT NULL,
   `preview` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `image_product`
---
-
-CREATE TABLE `image_product` (
-  `image_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -99,22 +89,12 @@ CREATE TABLE `order` (
 
 CREATE TABLE `product` (
   `product_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
   `name` varchar(255) CHARACTER SET utf8 NOT NULL,
   `short_description` varchar(255) NOT NULL,
   `description` text CHARACTER SET utf8 NOT NULL,
   `price` decimal(10,0) NOT NULL,
   `stockqty` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `product_category`
---
-
-CREATE TABLE `product_category` (
-  `product_id` int(11) NOT NULL,
-  `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -182,13 +162,8 @@ ALTER TABLE `category`
 -- Indexes for table `image`
 --
 ALTER TABLE `image`
-  ADD PRIMARY KEY (`image_id`);
-
---
--- Indexes for table `image_product`
---
-ALTER TABLE `image_product`
-  ADD KEY `image_product` (`image_id`,`product_id`);
+  ADD PRIMARY KEY (`image_id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- Indexes for table `order`
@@ -201,13 +176,8 @@ ALTER TABLE `order`
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
-  ADD PRIMARY KEY (`product_id`);
-
---
--- Indexes for table `product_category`
---
-ALTER TABLE `product_category`
-  ADD KEY `product_category` (`product_id`,`category_id`);
+  ADD PRIMARY KEY (`product_id`),
+  ADD KEY `category_id` (`category_id`);
 
 --
 -- Indexes for table `product_user`
